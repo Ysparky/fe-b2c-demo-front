@@ -1,6 +1,6 @@
 import './style.css'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+document.querySelector<HTMLDivElement>('#api')!.innerHTML = `
   <div class="min-h-screen flex items-center justify-center bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-center">
