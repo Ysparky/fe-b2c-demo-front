@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Pacífico Seguros - Web Empresa{% endblock %}</title>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/variables.css">
+  <link rel="stylesheet" href="/assets/styles/design-system.css">
+  {% block styles %}{% endblock %}
+  
+  <!-- Google Tag Manager -->
+  {% if gtmId %}
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ gtmId }}');</script>
+  {% endif %}
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  {% if gtmId %}
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ gtmId }}"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  {% endif %}
+
+  {% include "../partials/header.njk" %}
+
+  <main class="main-container">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "../partials/footer.njk" %}
+
+  <!-- Azure B2C injected content -->
+  <div id="api" style="display: none;"></div>
+
+  <!-- Scripts -->
+  {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,79 @@
+{% extends "../../templates/layouts/base.njk" %}
+
+{% block title %}Iniciar Sesión - Pacífico Seguros{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="../scenario-5-existing-login/step-1-login.css">
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+  <div class="login-card card">
+    <div class="card-header">
+      <h1 class="card-title">Bienvenido</h1>
+      <p class="card-subtitle">Si ya estás registrado inicia sesión.</p>
+    </div>
+
+    <div class="card-body">
+      <form id="loginForm">
+        <!-- Documento de identidad -->
+        <div class="form-group">
+          <label for="documentNumber" class="form-label form-label-required">
+            Ingresa tu documento de identidad
+          </label>
+          <div class="document-input-container">
+            <select id="documentType" class="form-select document-select">
+              <option value="DNI">DNI</option>
+              <option value="CE">CE</option>
+            </select>
+            <input
+              type="text"
+              id="documentNumber"
+              class="form-input document-input"
+              placeholder="Nro. de documento"
+              autocomplete="off"
+            />
+          </div>
+          <div id="documentNumber_error"></div>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="form-group">
+          <label for="password" class="form-label form-label-required">
+            Contraseña
+          </label>
+          <input
+            type="password"
+            id="password"
+            class="form-input"
+            placeholder="Ingresa tu contraseña"
+            autocomplete="current-password"
+          />
+          <div id="password_error"></div>
+        </div>
+
+        <!-- Link olvidaste contraseña -->
+        <div class="forgot-password-container">
+          <a href="#" id="forgotPasswordLink" class="forgot-password-link">
+            ¿Olvidaste tu contraseña?
+          </a>
+        </div>
+
+        <!-- Botones -->
+        <div class="form-actions">
+          <button type="button" id="registerBtn" class="btn btn-secondary btn-full">
+            Regístrate
+          </button>
+          <button type="submit" id="loginBtn" class="btn btn-primary btn-full">
+            Iniciar sesión
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="./step-1-login.ts"></script>
+{% endblock %}

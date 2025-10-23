@@ -1,0 +1,32 @@
+{% extends "../../templates/layouts/base.njk" %}
+
+{% block title %}Verificación - Pacífico Seguros{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="../scenario-5-existing-login/step-2-mfa.css">
+{% endblock %}
+
+{% block content %}
+<div class="mfa-container">
+  <div class="mfa-card card">
+    <div class="card-header">
+      <h1 class="card-title">Verifiquemos tu registro,</h1>
+      <p class="card-subtitle">Elige el medio donde prefieres recibir el código de verificación.</p>
+    </div>
+
+    <div class="card-body">
+      <div id="mfaOptions"></div>
+    </div>
+
+    <div class="card-footer">
+      <button type="button" id="continueBtn" class="btn btn-primary btn-full">
+        Continuar
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="./step-2-mfa.ts"></script>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "../../templates/layouts/base.njk" %}
+
+{% block title %}Cargando - Pacífico Seguros{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="./step-4-loading.css">
+{% endblock %}
+
+{% block content %}
+<div class="loading-container">
+  <div id="loadingSpinner"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="./step-4-loading.ts"></script>
+{% endblock %}

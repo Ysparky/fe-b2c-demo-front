@@ -1,0 +1,36 @@
+.loading-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-2xl);
+  min-height: 200px;
+}
+
+.loading-message {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-700);
+  text-align: center;
+  margin: 0;
+}
+
+/* Spinner ya está definido en design-system.css, pero agregamos variantes */
+.spinner-sm {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-width: 2px;
+}
+
+.spinner-md {
+  width: 3rem;
+  height: 3rem;
+  border-width: 3px;
+}
+
+.spinner-lg {
+  width: 4rem;
+  height: 4rem;
+  border-width: 4px;
+}

@@ -1,0 +1,63 @@
+{% extends "../../templates/layouts/base.njk" %}
+
+{% block title %}Contraseña Expirada - Pacífico Seguros{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="./step-4-expired.css">
+{% endblock %}
+
+{% block content %}
+<div class="expired-container">
+  <div class="expired-card card">
+    <div class="card-header">
+      <h1 class="card-title">Tu contraseña ha expirado,</h1>
+      <p class="card-subtitle">Crea una nueva contraseña</p>
+    </div>
+
+    <div class="card-body">
+      <form id="passwordForm">
+        <!-- Nueva Contraseña -->
+        <div class="form-group">
+          <label for="newPassword" class="form-label form-label-required">
+            Contraseña
+          </label>
+          <input
+            type="password"
+            id="newPassword"
+            class="form-input"
+            placeholder="Ingresar"
+            autocomplete="new-password"
+          />
+        </div>
+
+        <!-- Requisitos de contraseña -->
+        <div id="passwordRequirements"></div>
+
+        <!-- Confirmar Contraseña -->
+        <div class="form-group">
+          <label for="confirmPassword" class="form-label form-label-required">
+            Confirma tu contraseña
+          </label>
+          <input
+            type="password"
+            id="confirmPassword"
+            class="form-input"
+            placeholder="Ingresar"
+            autocomplete="new-password"
+          />
+        </div>
+      </form>
+    </div>
+
+    <div class="card-footer">
+      <button type="button" id="continueBtn" class="btn btn-primary btn-full" disabled>
+        Continuar
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="./step-4-expired.ts"></script>
+{% endblock %}

@@ -1,0 +1,66 @@
+.otp-input-container {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.otp-input {
+  width: 3rem;
+  height: 3.5rem;
+  text-align: center;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.otp-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.otp-input:disabled {
+  background-color: var(--color-gray-100);
+  cursor: not-allowed;
+}
+
+.otp-input.error {
+  border-color: var(--color-error);
+}
+
+.otp-input.error:focus {
+  box-shadow: 0 0 0 3px var(--color-error-light);
+}
+
+/* Animación al completar */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.otp-input.filled {
+  animation: pulse 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .otp-input {
+    width: 2.5rem;
+    height: 3rem;
+    font-size: var(--font-size-xl);
+  }
+
+  .otp-input-container {
+    gap: var(--spacing-xs);
+  }
+}

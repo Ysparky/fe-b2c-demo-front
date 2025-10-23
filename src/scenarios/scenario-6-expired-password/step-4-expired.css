@@ -1,0 +1,19 @@
+.expired-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  padding: var(--spacing-xl);
+}
+
+.expired-card {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .expired-container {
+    padding: var(--spacing-lg);
+  }
+}

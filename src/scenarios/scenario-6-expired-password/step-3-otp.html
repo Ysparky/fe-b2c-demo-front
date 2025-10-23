@@ -1,0 +1,54 @@
+{% extends "../../templates/layouts/base.njk" %}
+
+{% block title %}Verificación de Código - Pacífico Seguros{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="../scenario-5-existing-login/step-3-otp.css">
+{% endblock %}
+
+{% block content %}
+<div class="otp-container">
+  <div class="otp-card card">
+    <div class="card-header">
+      <h1 class="card-title">Muy bien,</h1>
+      <p class="card-subtitle">
+        Te hemos enviado un código de verificación al correo <strong>ejem****@ejemplo.com</strong>
+      </p>
+    </div>
+
+    <div class="card-body">
+      <div class="alert alert-info">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zm1 15H9v-2h2v2zm0-4H9V5h2v6z"/>
+        </svg>
+        <span>El código de verificación puede tardar unos minutos en llegar. Por favor, no cierres la pantalla.</span>
+      </div>
+
+      <div class="otp-section">
+        <label class="form-label">Ingresa el código de 6 dígitos</label>
+        <div id="otpInput"></div>
+      </div>
+
+      <div class="timer-section">
+        <p class="timer-text">El código vencerá en: <strong id="timer">02:57</strong> min</p>
+        <button type="button" id="resendBtn" class="btn btn-link" disabled>
+          Volver a enviar código
+        </button>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <button type="button" id="backBtn" class="btn btn-outline">
+        Regresar
+      </button>
+      <button type="button" id="continueBtn" class="btn btn-primary" disabled>
+        Continuar
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="./step-3-otp.ts"></script>
+{% endblock %}
