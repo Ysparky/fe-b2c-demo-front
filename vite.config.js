@@ -97,16 +97,18 @@ export default defineConfig({
         // Demo: Login básico ✅ - Reemplaza customize-ui.html
         'customize-ui': resolve(__dirname, 'src/scenarios/scenario-demo-basic-login/demo-login.html'),
         
-        // Comentados temporalmente hasta arreglar templates
-        // 'scenario-5-step-1': resolve(__dirname, 'src/scenarios/scenario-5-existing-login/step-1-login.html'),
-        // 'scenario-5-step-2': resolve(__dirname, 'src/scenarios/scenario-5-existing-login/step-2-mfa.html'),
-        // 'scenario-5-step-3': resolve(__dirname, 'src/scenarios/scenario-5-existing-login/step-3-otp.html'),
-        // 'scenario-5-step-4': resolve(__dirname, 'src/scenarios/scenario-5-existing-login/step-4-loading.html'),
-        // 'scenario-6-step-1': resolve(__dirname, 'src/scenarios/scenario-6-expired-password/step-1-login.html'),
-        // 'scenario-6-step-2': resolve(__dirname, 'src/scenarios/scenario-6-expired-password/step-2-mfa.html'),
-        // 'scenario-6-step-3': resolve(__dirname, 'src/scenarios/scenario-6-expired-password/step-3-otp.html'),
-        // 'scenario-6-step-4': resolve(__dirname, 'src/scenarios/scenario-6-expired-password/step-4-expired.html'),
-        // 'scenario-6-step-5': resolve(__dirname, 'src/scenarios/scenario-6-expired-password/step-5-success.html'),
+        // Escenario 5: Login Cuenta Existente (4 pasos)
+        'scenario-5-step-1': resolve(__dirname, 'src/scenarios/scenario-5-existing-login/step-1-login.html'),
+        'scenario-5-step-2': resolve(__dirname, 'src/scenarios/scenario-5-existing-login/step-2-mfa.html'),
+        'scenario-5-step-3': resolve(__dirname, 'src/scenarios/scenario-5-existing-login/step-3-otp.html'),
+        'scenario-5-step-4': resolve(__dirname, 'src/scenarios/scenario-5-existing-login/step-4-loading.html'),
+        
+        // Escenario 6: Contraseña Vencida (5 pasos)
+        'scenario-6-step-1': resolve(__dirname, 'src/scenarios/scenario-6-expired-password/step-1-login.html'),
+        'scenario-6-step-2': resolve(__dirname, 'src/scenarios/scenario-6-expired-password/step-2-mfa.html'),
+        'scenario-6-step-3': resolve(__dirname, 'src/scenarios/scenario-6-expired-password/step-3-otp.html'),
+        'scenario-6-step-4': resolve(__dirname, 'src/scenarios/scenario-6-expired-password/step-4-expired.html'),
+        'scenario-6-step-5': resolve(__dirname, 'src/scenarios/scenario-6-expired-password/step-5-success.html'),
       },
     },
     outDir: '../build',
