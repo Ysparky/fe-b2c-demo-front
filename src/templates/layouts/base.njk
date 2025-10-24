@@ -26,16 +26,13 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {% endif %}
 
-  {% include "../partials/header.njk" %}
+  {% include "src/templates/partials/header.njk" %}
 
   <main class="main-container">
     {% block content %}{% endblock %}
   </main>
 
-  {% include "../partials/footer.njk" %}
-
-  <!-- Azure B2C injected content -->
-  <div id="api" style="display: none;"></div>
+  {% include "src/templates/partials/footer.njk" %}
 
   <!-- Scripts -->
   {% block scripts %}{% endblock %}

@@ -1,0 +1,133 @@
+{% extends "src/templates/layouts/base.njk" %}
+
+{% block title %}Iniciar Sesión - Pacífico Seguros{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="./demo-login.css">
+{% endblock %}
+
+{% block content %}
+<div class="demo-login-container">
+  <!-- Left Side: Hero Image -->
+  <div class="demo-login-hero">
+    <img src="/assets/images/login-hero.jpg" alt="Bienvenido" class="demo-hero-image">
+  </div>
+
+  <!-- Right Side: Login Form -->
+  <div class="demo-login-form-wrapper">
+    <div class="demo-login-card">
+      <!-- Header -->
+      <div class="demo-card-header">
+        <h1 class="demo-title">Bienvenido</h1>
+        <p class="demo-subtitle">Si ya estás registrado <strong>inicia sesión</strong>.</p>
+      </div>
+
+    <!-- Azure B2C API Container -->
+    <div id="api"></div>
+
+    <!-- Formulario de respaldo (solo para preview local) -->
+    <form id="demoLoginForm" class="demo-form demo-form-fallback">
+      <!-- Documento de Identidad (Tipo + Número) -->
+      <div class="demo-form-group">
+        <label for="documentNumber" class="demo-label">
+          Ingresa tu documento de identidad
+        </label>
+        <div class="demo-document-input">
+          <select 
+            id="documentType" 
+            class="demo-select-inline"
+            aria-label="Tipo de Documento"
+            aria-required="true"
+          >
+            <option value="dni" selected>DNI</option>
+            <option value="ce">CE</option>
+          </select>
+          <input 
+            type="text" 
+            id="documentNumber" 
+            class="demo-input-inline"
+            placeholder="Nro. de documento"
+            pattern="^[0-9]*$"
+            aria-label="Nro. de Documento"
+            aria-required="true"
+            autocomplete="off"
+          />
+        </div>
+        <div id="documentNumber_error" class="demo-error" role="alert" aria-live="polite"></div>
+      </div>
+
+      <!-- Contraseña -->
+      <div class="demo-form-group">
+        <label for="password" class="demo-label">
+          Contraseña
+        </label>
+        <div class="demo-password-wrapper">
+          <input
+            type="password"
+            id="password"
+            class="demo-input"
+            placeholder="Ingresar"
+            aria-label="Contraseña"
+            aria-required="true"
+            autocomplete="current-password"
+          />
+          <button 
+            type="button" 
+            id="togglePassword" 
+            class="demo-password-toggle"
+            aria-label="Mostrar contraseña"
+          >
+            <svg class="demo-icon-eye" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M10 4C5 4 1.73 7.11 1 10c.73 2.89 4 6 9 6s8.27-3.11 9-6c-.73-2.89-4-6-9-6zm0 10a4 4 0 110-8 4 4 0 010 8zm0-6a2 2 0 100 4 2 2 0 000-4z" fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
+        <div id="password_error" class="demo-error" role="alert" aria-live="polite"></div>
+      </div>
+
+      <!-- ¿Olvidaste tu contraseña? -->
+      <div class="demo-forgot-password">
+        <a href="#" id="forgotPasswordLink" class="demo-link">
+          ¿Olvidaste tu contraseña?
+        </a>
+      </div>
+
+      <!-- Mensajes de Error Globales -->
+      <div id="globalError" class="demo-error-global" role="alert" aria-live="assertive" style="display: none;"></div>
+
+      <!-- Botones de Acción -->
+      <div class="demo-form-actions">
+        <button 
+          type="button" 
+          id="registerBtn" 
+          class="demo-btn demo-btn-outline"
+          aria-label="Regístrate"
+        >
+          Regístrate
+        </button>
+        
+        <button 
+          type="submit" 
+          id="loginBtn" 
+          class="demo-btn demo-btn-primary"
+          aria-label="Iniciar sesión"
+        >
+          <span class="demo-btn-text">Iniciar sesión</span>
+          <span class="demo-btn-loader" style="display: none;">
+            <svg class="demo-spinner" width="20" height="20" viewBox="0 0 20 20">
+              <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="50" stroke-dashoffset="0">
+                <animateTransform attributeName="transform" type="rotate" from="0 10 10" to="360 10 10" dur="1s" repeatCount="indefinite"/>
+              </circle>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="./demo-login.ts"></script>
+{% endblock %}

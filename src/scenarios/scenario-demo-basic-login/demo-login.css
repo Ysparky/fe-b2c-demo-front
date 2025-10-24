@@ -1,0 +1,599 @@
+/* ========================================
+   DEMO LOGIN - Split Screen Design (Figma)
+   ======================================== */
+
+@import '../../assets/styles/variables.css';
+
+/* Container Principal - Split Screen */
+.demo-login-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+/* Left Side: Hero Image */
+.demo-login-hero {
+  position: relative;
+  overflow: hidden;
+  background: #F5F5F5;
+}
+
+.demo-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Right Side: Form Wrapper */
+.demo-login-form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 3rem;
+  background: #FFFFFF;
+  overflow-y: auto;
+}
+
+/* Card Principal */
+.demo-login-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 0;
+}
+
+/* Responsive: Mobile */
+@media (max-width: 768px) {
+  .demo-login-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .demo-login-hero {
+    min-height: 200px;
+    max-height: 300px;
+  }
+
+  .demo-login-form-wrapper {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Header */
+.demo-card-header {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.demo-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #004C66;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.demo-subtitle {
+  font-size: 1rem;
+  color: #666666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.demo-subtitle strong {
+  color: #1A1A1A;
+  font-weight: 600;
+}
+
+/* ========================================
+   AZURE B2C API STYLES
+   ======================================== */
+
+/* API Container */
+#api {
+  width: 100%;
+}
+
+/* Ocultar intro de B2C (Bienvenido a Protege 365) */
+#api .intro {
+  display: none !important;
+}
+
+/* Ocultar formulario fallback cuando B2C está activo */
+#api:not(:empty) ~ .demo-form-fallback {
+  display: none;
+}
+
+/* B2C Form */
+#api form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* B2C Labels */
+#api label {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* B2C Inputs */
+#api input[type="text"],
+#api input[type="email"],
+#api input[type="password"],
+#api input[type="tel"] {
+  width: 100%;
+  height: 48px;
+  padding: 0 1rem;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #F8F9FA;
+  border: 2px solid #E0E0E0;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+#api input:focus {
+  border-color: #0080AA;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(0, 128, 170, 0.1);
+}
+
+#api input::placeholder {
+  color: #999999;
+}
+
+/* B2C Select */
+#api select {
+  width: 100%;
+  height: 48px;
+  padding: 0 1rem;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #F8F9FA;
+  border: 2px solid #E0E0E0;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+#api select:focus {
+  border-color: #0080AA;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(0, 128, 170, 0.1);
+}
+
+/* B2C Buttons */
+#api button[type="submit"],
+#api .buttons button {
+  height: 48px;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #0080AA;
+  color: #FFFFFF;
+  border: 2px solid #0080AA;
+}
+
+#api button[type="submit"]:hover,
+#api .buttons button:hover {
+  background: #006688;
+  border-color: #006688;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 128, 170, 0.3);
+}
+
+/* B2C Error Messages */
+#api .error {
+  color: #E63946;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* B2C Links */
+#api a {
+  color: #0099CC;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+#api a:hover {
+  color: #0080AA;
+  text-decoration: underline;
+}
+
+/* Form */
+.demo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Form Group */
+.demo-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Label */
+.demo-label {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+/* Document Input Inline (Tipo + Número) */
+.demo-document-input {
+  display: flex;
+  gap: 0;
+  border: 1px solid #CCCCCC;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.demo-select-inline {
+  width: 120px;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  color: #333333;
+  border: none;
+  border-right: 1px solid #CCCCCC;
+  background: #FFFFFF;
+  cursor: pointer;
+  outline: none;
+}
+
+.demo-input-inline {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  color: #333333;
+  border: none;
+  background: #FFFFFF;
+  outline: none;
+}
+
+.demo-input-inline::placeholder {
+  color: #999999;
+}
+
+.demo-document-input:focus-within {
+  border-color: #0080AA;
+  box-shadow: 0 0 0 3px rgba(0, 128, 170, 0.1);
+}
+
+/* Select */
+.demo-select {
+  width: 100%;
+  height: 48px;
+  padding: 0 1rem;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #F8F9FA;
+  border: 2px solid #E0E0E0;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 3rem;
+}
+
+.demo-select:hover {
+  border-color: #00A4D9;
+  background-color: #FFFFFF;
+}
+
+.demo-select:focus {
+  border-color: #00A4D9;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(0, 164, 217, 0.1);
+}
+
+/* Input */
+.demo-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 1rem;
+  font-size: 1rem;
+  color: #333333;
+  background-color: #F8F9FA;
+  border: 2px solid #E0E0E0;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.demo-input::placeholder {
+  color: #999999;
+}
+
+.demo-input:hover {
+  border-color: #00A4D9;
+  background-color: #FFFFFF;
+}
+
+.demo-input:focus {
+  border-color: #00A4D9;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(0, 164, 217, 0.1);
+}
+
+.demo-input.error {
+  border-color: #E63946;
+  background-color: #FFF5F5;
+}
+
+.demo-input.error:focus {
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.1);
+}
+
+/* Password Wrapper */
+.demo-password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.demo-password-wrapper .demo-input {
+  padding-right: 3rem;
+}
+
+.demo-password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: #666666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  border-radius: 4px;
+}
+
+.demo-password-toggle:hover {
+  color: #00A4D9;
+  background-color: rgba(0, 164, 217, 0.05);
+}
+
+.demo-password-toggle:focus {
+  outline: 2px solid #00A4D9;
+  outline-offset: 2px;
+}
+
+/* Error Messages */
+.demo-error {
+  font-size: 0.8125rem;
+  color: #E63946;
+  margin-top: 0.25rem;
+  display: none;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.demo-error.show {
+  display: flex;
+}
+
+.demo-error::before {
+  content: '⚠';
+  font-size: 1rem;
+}
+
+.demo-error-global {
+  padding: 0.875rem 1rem;
+  background-color: #FFF5F5;
+  border: 1px solid #E63946;
+  border-radius: 8px;
+  color: #C1121F;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* Forgot Password */
+.demo-forgot-password {
+  text-align: right;
+  margin-top: -0.5rem;
+}
+
+.demo-link {
+  font-size: 0.9375rem;
+  color: #0099CC;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.demo-link:hover {
+  color: #0080AA;
+  text-decoration: underline;
+}
+
+.demo-link:focus {
+  outline: 2px solid #00A4D9;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Buttons */
+.demo-form-actions {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.demo-btn {
+  height: 48px;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Outline Button (Regístrate) */
+.demo-btn-outline {
+  background: transparent;
+  color: #0080AA;
+  border: 2px solid #0080AA;
+}
+
+.demo-btn-outline:hover:not(:disabled) {
+  background: rgba(0, 128, 170, 0.05);
+  border-color: #006688;
+  color: #006688;
+}
+
+.demo-btn-outline:active:not(:disabled) {
+  background: rgba(0, 128, 170, 0.1);
+}
+
+/* Primary Button (Iniciar sesión) */
+.demo-btn-primary {
+  background: #0080AA;
+  color: #FFFFFF;
+  border: 2px solid #0080AA;
+}
+
+.demo-btn-primary:hover:not(:disabled) {
+  background: #006688;
+  border-color: #006688;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 128, 170, 0.3);
+}
+
+.demo-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 128, 170, 0.2);
+}
+
+.demo-btn:focus {
+  outline: 3px solid rgba(0, 164, 217, 0.3);
+  outline-offset: 2px;
+}
+
+.demo-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.demo-btn-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Footer */
+.demo-card-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #E0E0E0;
+  text-align: center;
+}
+
+.demo-footer-text {
+  font-size: 0.875rem;
+  color: #666666;
+  margin: 0;
+}
+
+.demo-link-bold {
+  color: #00A4D9;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.demo-link-bold:hover {
+  color: #0077B6;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .demo-login-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .demo-title {
+    font-size: 1.5rem;
+  }
+
+  .demo-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .demo-input,
+  .demo-select,
+  .demo-btn {
+    height: 44px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .demo-login-card,
+  .demo-btn,
+  .demo-input,
+  .demo-select,
+  .demo-link {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .demo-input,
+  .demo-select {
+    border-width: 3px;
+  }
+
+  .demo-btn-primary {
+    border: 2px solid #FFFFFF;
+  }
+}

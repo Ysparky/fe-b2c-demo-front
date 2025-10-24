@@ -32,5 +32,5 @@
     }
   },
   "include": ["src", "src/types/**/*"],
-  "types": ["vite/client"]
+  "exclude": ["vite.config.js", "node_modules"]
 }

@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite --port 3000",
     "build": "tsc && vite build",
+    "build:skip-check": "vite build",
+    "build:demo": "vite build && cp build/scenarios/scenario-demo-basic-login/demo-login.html build/customize-ui.html && mkdir -p build/assets/images && cp src/assets/images/logo.png build/assets/images/logo.png",
     "preview": "vite preview --port 3000",
     "watch": "vite build --watch & vite preview --port 3000",
     "lint": "eslint src --ext ts,tsx",
